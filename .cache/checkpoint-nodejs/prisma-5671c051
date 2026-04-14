@@ -1,0 +1,26 @@
+{
+  "last_reminder": 0,
+  "cached_at": 1776193987078,
+  "version": "7.7.0",
+  "cli_path": "/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/.bin/prisma",
+  "output": {
+    "product": "prisma",
+    "previous_version": "7.7.0",
+    "checkpoint_version": 4,
+    "local_timestamp_without_timezone": "2026-04-14T19:13:06Z",
+    "current_version": "7.7.0",
+    "current_release_date": 1775577373,
+    "client_event_id": "acf266f5-d29c-4e1d-9165-3a48b2416ff7",
+    "current_download_url": "https://github.com/prisma/prisma",
+    "package": "prisma",
+    "release_tag": "latest",
+    "install_command": "npm install --save-dev prisma",
+    "schema_providers": [],
+    "schema_preview_features": [],
+    "schema_generators_providers": [],
+    "current_changelog_url": "https://github.com/prisma/prisma",
+    "outdated": false,
+    "project_website": "https://prisma.io",
+    "alerts": []
+  }
+}

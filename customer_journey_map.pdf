@@ -1,0 +1,36 @@
+# Customer Journey Map Visual Representation
+
+## Overview
+
+Create a visual representation of the customer journey, including stages, touchpoints, emotions, and behaviors. Use tools like Miro or Signavio to create the visual representation.
+
+## Output
+
+* A customer journey map visual representation in a file named 'customer_journey_map.pdf' or 'customer_journey_map.png'
+table
+| Stage | Touchpoint | Emotion | Behavior |
+| --- | --- | --- | --- |
+| Awareness | Social media ad | Curiosity | Clicks on ad |
+| Consideration | Website visit | Interest | Reads product description |
+| Purchase | Online purchase | Satisfaction | Makes purchase |
+
+## Task
+
+Use the available tools to complete this task. When you are completely done, respond with a final summary of what you accomplished. Do NOT call any more tools once you're done — just write your summary.
+
+## Acceptance Criteria
+
+Complete the task as described.
+
+## Work in the directory
+
+/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e
+
+## Use the available tools
+
+Use the available tools to complete this task.
+
+## Final Summary
+
+When you are completely done, respond with a final summary of what you accomplished. Do NOT call any more tools once you're done — just write your summary.
+
