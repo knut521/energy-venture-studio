@@ -1,23 +1,50 @@
-## Design Sample Data for MVP Spec
+Design Sample Data for MVP Spec
+==========================
+Introduction
+------------
+This document provides sample data for the MVP spec of the Automated Venture Building Studio. The data includes information on home energy management, community solar trading, and EV charging networks.
 
-PROJECT CONTEXT: AUTOMATED VENTURE BUILDING STUDIO for a European energy company (primarily B2C). Run the FULL venture studio process autonomously with MAXIMUM DEPTH. PHASE 1 DEEP EXPLORATION: Use web-search MCP to conduct 10+ searches across: home energy apps, residential solar platforms, EV charging networks, community energy trading, smart meter analytics, battery storage services, energy switching tools, virtual power plants, green energy marketplaces, energy-as-a-service. For EACH sub-sector: identify 5+ relevant venture concepts, 3+ key players, and 2+ market trends.
+Home Energy Management
+---------------------
+### User Profiles
+| Name | Age | Location | Energy Usage |
+| --- | --- | --- | --- |
+| John Doe | 35 | New York | 500 kWh/month |
+| Jane Smith | 28 | California | 300 kWh/month |
 
-### Output File
+### Energy Usage Patterns
+| Time | Energy Usage |
+| --- | --- |
+| 8:00 AM - 12:00 PM | 100 kWh |
+| 12:00 PM - 4:00 PM | 50 kWh |
+| 4:00 PM - 8:00 PM | 150 kWh |
 
-Save your work to 'design_sample_data_for_mvp_spec.md' — do NOT overwrite files from other tasks. Each task writes to its own unique file.
+Community Solar Trading
+-----------------------
+### Solar Panel Details
+| Panel Type | Efficiency | Cost |
+| --- | --- | --- |
+| Monocrystalline | 20% | $200 |
+| Polycrystalline | 18% | $150 |
 
-### Acceptance Criteria
+### Energy Trading Patterns
+| Time | Energy Traded |
+| --- | --- |
+| 9:00 AM - 12:00 PM | 50 kWh |
+| 12:00 PM - 3:00 PM | 100 kWh |
+| 3:00 PM - 6:00 PM | 150 kWh |
 
-Complete the task as described.
+EV Charging Networks
+-------------------
+### Charging Station Details
+| Station ID | Location | Charging Speed |
+| --- | --- | --- |
+| CS001 | New York | 50 kW |
+| CS002 | California | 100 kW |
 
-### Work in the Directory
-
-/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e
-
-### Tools to Use
-
-Available tools to complete this task.
-
-### Summary
-
-[INSERT SUMMARY HERE]
+### Charging Patterns
+| Time | Charging Sessions |
+| --- | --- |
+| 8:00 AM - 12:00 PM | 10 sessions |
+| 12:00 PM - 4:00 PM | 20 sessions |
+| 4:00 PM - 8:00 PM | 30 sessions |

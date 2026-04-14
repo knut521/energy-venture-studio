@@ -1,6 +1,7 @@
 import { Company, CustomerJourneyStage, MarketGap, VentureConcept } from '@/types';
 
 export const sampleCompanies: Company[] = [
+  // Home Energy Apps
   {
     id: '1',
     name: 'Sense Energy Monitor',
@@ -25,6 +26,19 @@ export const sampleCompanies: Company[] = [
   },
   {
     id: '3',
+    name: 'Zerofy',
+    country: 'Estonia',
+    funding: '$1.2M',
+    differentiator: 'Machine learning-powered energy optimization',
+    sector: 'Home Energy Apps',
+    founded: 2022,
+    employees: '10-20',
+    website: 'https://zerofy.com'
+  },
+
+  // Residential Solar
+  {
+    id: '4',
     name: 'Aurora Solar',
     country: 'United States',
     funding: '$523M',
@@ -35,7 +49,7 @@ export const sampleCompanies: Company[] = [
     website: 'https://aurorasolar.com'
   },
   {
-    id: '4',
+    id: '5',
     name: 'Tesla Energy',
     country: 'United States',
     funding: 'N/A (Tesla subsidiary)',
@@ -46,7 +60,20 @@ export const sampleCompanies: Company[] = [
     website: 'https://www.tesla.com/energy'
   },
   {
-    id: '5',
+    id: '6',
+    name: 'Sunrun',
+    country: 'United States',
+    funding: '$2.1B',
+    differentiator: 'Largest residential solar company in US',
+    sector: 'Residential Solar',
+    founded: 2007,
+    employees: '5000+',
+    website: 'https://sunrun.com'
+  },
+
+  // EV Charging Networks
+  {
+    id: '7',
     name: 'ChargePoint',
     country: 'United States',
     funding: '$660M',
