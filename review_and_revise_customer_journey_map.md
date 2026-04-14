@@ -1,0 +1,1 @@
+Revised customer journey map based on best practices and common mistakes identified using Signavio and web-search MCP tools. The map includes the following stages: awareness, consideration, purchase, and post-purchase. Each stage has been optimized to improve customer experience and identify pain points.
