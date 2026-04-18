@@ -1,4 +1,4 @@
 node_modules/
 .next/
-.npm/
-prisma/
+__pycache__/
+*.pyc

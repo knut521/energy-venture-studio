@@ -1,231 +1,402 @@
-# Design Layout for Home Energy Apps Section
+# Home Energy Apps Section - Layout Design Document
 
 ## Executive Summary
-This document outlines the comprehensive design layout for the home energy apps section of the Automated Venture Building Studio. Based on extensive research of leading energy apps like Emporia Energy, Sense Energy Monitor, and industry best practices, this design addresses user authentication, dashboard organization, navigation patterns, and key features required for successful home energy management applications.
+This document outlines the comprehensive layout design for the home energy apps section of the MVP, targeting energy-conscious homeowners aged 35-55. The design focuses on addressing key user pain points identified in market research: high energy bills, lack of visibility into energy usage, complex installation processes, and data overload.
 
-## Research-Based Design Principles
+## Design Principles
 
-### Authentication Patterns
-Based on research of modern mobile app authentication:
-- **Multiple Login Options**: Email/password, biometric (fingerprint/face ID), and social login
-- **Security First**: Password re-entry after failed attempts, secure credential storage
-- **User Convenience**: "Stay signed in" option with biometric fallback
-- **Simplified Signup**: Minimal required fields with progressive disclosure
+### 1. User-Centric Design
+- **Simplicity**: Clean, intuitive interface that minimizes cognitive load
+- **Actionable Insights**: Data presented with clear recommendations
+- **Progressive Disclosure**: Complex features revealed gradually
+- **Accessibility**: WCAG 2.1 compliant with proper contrast ratios
 
-### Navigation Architecture
-Research indicates optimal mobile navigation patterns:
-- **Bottom Tab Navigation**: 3-5 primary sections for thumb-friendly access
-- **Hierarchical Organization**: Main categories with nested sub-sections
-- **Consistent Placement**: Fixed navigation bar for muscle memory development
-- **Gesture Support**: Swipe navigation between related sections
+### 2. Technical Foundation
+- **Framework**: Next.js 14+ with App Router
+- **Styling**: Tailwind CSS for rapid development and consistency
+- **Charts**: Recharts or Chart.js for data visualization
+- **Icons**: Lucide React for consistent iconography
+- **Responsive**: Mobile-first design with tablet/desktop enhancements
 
-### Dashboard Design
-Energy app dashboard research reveals:
-- **Real-time Monitoring**: Immediate consumption data visualization
-- **Actionable Insights**: Clear cost savings and optimization recommendations
-- **Customizable Layouts**: Drag-and-drop widget organization
-- **Multi-device Support**: Responsive design for mobile, tablet, and desktop
+## Layout Structure
 
-## Section Layout Design
+### Overall Page Architecture
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Global Header                           │
+│  [Logo] [Navigation] [User Menu] [Notifications]           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                  Dashboard Overview                 │   │
+│  │  [Key Metrics Cards - 4 column grid]               │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │               Energy Consumption Chart              │   │
+│  │  [Interactive line chart with time filters]         │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │               Device Usage Breakdown               │   │
+│  │  [Donut chart + device list with consumption]      │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                Cost & Savings Analysis              │   │
+│  │  [Cost comparison + savings potential]              │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                Recommendations                      │   │
+│  │  [Actionable energy-saving tips]                   │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
 
-### 1. Authentication Module
+## Component Breakdown
 
-**Login Screen Components:**
-- Email/username input field
-- Password field with visibility toggle
-- "Remember me" checkbox
-- "Forgot password" link
-- Social login buttons (Google, Apple, Facebook)
-- Biometric authentication prompt (if available)
-- Sign up link for new users
+### 1. Global Header Component
+```jsx
+// Components: Logo, Navigation, UserMenu, Notifications
+<header className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
+  <div className="flex items-center space-x-8">
+    <Logo className="h-8 w-auto" />
+    <nav className="hidden md:flex space-x-6">
+      <NavLink href="/dashboard" activeClassName="text-blue-600 font-semibold">
+        Dashboard
+      </NavLink>
+      <NavLink href="/devices" activeClassName="text-blue-600 font-semibold">
+        Devices
+      </NavLink>
+      <NavLink href="/savings" activeClassName="text-blue-600 font-semibold">
+        Savings
+      </NavLink>
+      <NavLink href="/settings" activeClassName="text-blue-600 font-semibold">
+        Settings
+      </NavLink>
+    </nav>
+  </div>
+  <div className="flex items-center space-x-4">
+    <Notifications />
+    <UserMenu />
+  </div>
+</header>
+```
 
-**Signup Flow:**
-1. Email verification
-2. Password creation with strength indicator
-3. Basic profile information (optional)
-4. Device setup guidance
-5. Permission requests (notifications, location)
+### 2. Dashboard Overview Section
+```jsx
+// Components: MetricCard (4 columns)
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <MetricCard
+    title="Total Energy Today"
+    value="12.4 kWh"
+    change="+2.3% vs yesterday"
+    icon={<LightningIcon />}
+    trend="up"
+  />
+  <MetricCard
+    title="Cost Today"
+    value="€3.72"
+    change="-1.2% vs yesterday"
+    icon={<EuroIcon />}
+    trend="down"
+  />
+  <MetricCard
+    title="Carbon Footprint"
+    value="5.2 kg CO₂"
+    change="-8.7% vs yesterday"
+    icon={<LeafIcon />}
+    trend="down"
+  />
+  <MetricCard
+    title="Savings Potential"
+    value="€45/month"
+    change="+15% opportunity"
+    icon={<PiggyBankIcon />}
+    trend="neutral"
+  />
+</div>
+```
 
-### 2. Main Dashboard Layout
+### 3. Energy Consumption Chart
+```jsx
+// Components: InteractiveLineChart, TimeFilter
+<div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+  <div className="flex justify-between items-center mb-6">
+    <h2 className="text-xl font-semibold text-gray-900">Energy Consumption</h2>
+    <TimeFilter 
+      options={['24h', '7d', '30d', '90d']}
+      selected="7d"
+      onChange={handleTimeFilterChange}
+    />
+  </div>
+  <InteractiveLineChart
+    data={consumptionData}
+    height={300}
+    xAxisKey="time"
+    yAxisKey="consumption"
+    strokeColor="#3b82f6"
+    fillColor="#dbeafe"
+  />
+</div>
+```
 
-**Primary Navigation Tabs (Bottom Bar):**
-1. **Home** - Overview dashboard
-2. **Consumption** - Detailed usage analytics
-3. **Devices** - Connected equipment management
-4. **Savings** - Cost optimization features
-5. **Profile** - Account settings and preferences
+### 4. Device Usage Breakdown
+```jsx
+// Components: DonutChart, DeviceList
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+  <div className="bg-white rounded-lg shadow-sm p-6">
+    <h3 className="text-lg font-semibold mb-4">Usage by Device</h3>
+    <DonutChart
+      data={deviceUsageData}
+      width={250}
+      height={250}
+      innerRadius={60}
+      outerRadius={100}
+    />
+  </div>
+  <div className="bg-white rounded-lg shadow-sm p-6">
+    <h3 className="text-lg font-semibold mb-4">Top Energy Consumers</h3>
+    <DeviceList devices={topConsumers} />
+  </div>
+</div>
+```
 
-**Dashboard Widget System:**
-- **Real-time Consumption**: Live energy usage graph
-- **Cost Tracker**: Current spending and projections
-- **Savings Achieved**: Cumulative and projected savings
-- **Device Status**: Connected equipment overview
-- **Environmental Impact**: Carbon footprint metrics
-- **Notifications**: Alerts and recommendations
+### 5. Cost & Savings Analysis
+```jsx
+// Components: ComparisonChart, SavingsPotential
+<div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+  <h2 className="text-xl font-semibold mb-6">Cost & Savings Analysis</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <ComparisonChart
+      currentCost={currentCost}
+      potentialCost={potentialCost}
+      savings={savings}
+    />
+    <SavingsPotential
+      monthlyPotential={monthlyPotential}
+      yearlyPotential={yearlyPotential}
+      recommendations={savingsRecommendations}
+    />
+  </div>
+</div>
+```
 
-### 3. Consumption Analytics Section
+### 6. Recommendations Section
+```jsx
+// Components: RecommendationCard
+<div className="bg-white rounded-lg shadow-sm p-6">
+  <h2 className="text-xl font-semibold mb-6">Energy Saving Recommendations</h2>
+  <div className="space-y-4">
+    <RecommendationCard
+      title="Adjust Thermostat Schedule"
+      description="Reduce heating by 2°C during sleeping hours"
+      savings="€12/month"
+      difficulty="Easy"
+      implementationTime="5 minutes"
+    />
+    <RecommendationCard
+      title="Upgrade to LED Lighting"
+      description="Replace 10 incandescent bulbs with LEDs"
+      savings="€8/month"
+      difficulty="Medium"
+      implementationTime="30 minutes"
+    />
+    <RecommendationCard
+      title="Optimize Washing Machine Usage"
+      description="Run full loads and use cold water settings"
+      savings="€6/month"
+      difficulty="Easy"
+      implementationTime="No time"
+    />
+  </div>
+</div>
+```
 
-**Data Visualization Components:**
-- **Time-based Charts**: Hourly, daily, weekly, monthly views
-- **Comparative Analysis**: Usage vs. similar homes
-- **Cost Breakdown**: Electricity, gas, water separate tracking
-- **Peak Usage Identification**: High-consumption periods
-- **Trend Analysis**: Consumption patterns over time
+## Styling & Theme System
 
-### 4. Device Management Interface
+### Color Palette
+```css
+:root {
+  --primary: #3b82f6;    /* Blue-500 - Primary actions, main charts */
+  --secondary: #64748b;  /* Slate-500 - Secondary text, borders */
+  --success: #10b981;   /* Emerald-500 - Positive trends, savings */
+  --warning: #f59e0b;   /* Amber-500 - Warnings, medium priority */
+  --danger: #ef4444;    /* Red-500 - Errors, high consumption */
+  --background: #f8fafc; /* Slate-50 - Page background */
+  --card: #ffffff;      /* White - Card backgrounds */
+  --text-primary: #1e293b; /* Slate-800 - Primary text */
+  --text-secondary: #64748b; /* Slate-500 - Secondary text */
+}
+```
 
-**Connected Equipment Features:**
-- **Device Inventory**: All connected energy devices
-- **Status Monitoring**: Online/offline status and health
-- **Usage Allocation**: Per-device consumption tracking
-- **Control Capabilities**: Remote device control (where supported)
-- **Automation Setup**: Scheduling and rule creation
+### Typography Scale
+```css
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+```
 
-### 5. Savings Optimization Module
+### Spacing System
+```css
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-8 > * + * { margin-top: 2rem; }
+```
 
-**Cost Reduction Features:**
-- **Tariff Comparison**: Best energy plan recommendations
-- **Usage Alerts**: High consumption notifications
-- **Efficiency Tips**: Personalized recommendations
-- **Goal Setting**: Savings targets and tracking
-- **Rebate Information**: Available incentives and programs
+## Interactions & Animations
 
-### 6. User Profile & Settings
+### Hover Effects
+```css
+.hover\:shadow-md:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+.hover\:scale-105:hover { transform: scale(1.05); }
+.hover\:bg-blue-50:hover { background-color: #eff6ff; }
+```
 
-**Account Management:**
-- **Personal Information**: Name, address, contact details
-- **Notification Preferences**: Alert types and frequency
-- **Privacy Controls**: Data sharing preferences
-- **Billing Integration**: Utility account connections
-- **Support Access**: Help center and contact options
+### Transitions
+```css
+.transition-all { transition: all 0.2s ease-in-out; }
+.transition-colors { transition: background-color 0.2s ease-in-out; }
+.transition-transform { transition: transform 0.2s ease-in-out; }
+```
 
-## Visual Design Specifications
+### Loading States
+```jsx
+// Skeleton loading for charts
+<Skeleton className="h-64 w-full rounded-lg" />
 
-### Color Scheme
-- **Primary**: Energy green (#00C853) for action items
-- **Secondary**: Blue (#2196F3) for information and data
-- **Neutral**: Gray scale for backgrounds and text
-- **Alert**: Orange (#FF9800) for warnings, Red (#F44336) for critical issues
+// Skeleton loading for cards
+<Skeleton className="h-32 rounded-lg" />
+```
 
-### Typography
-- **Headings**: Roboto Bold for section titles
-- **Body**: Roboto Regular for content
-- **Data**: Roboto Mono for numerical information
-- **Labels**: Roboto Medium for interface labels
+## Responsive Design
 
-### Iconography
-- **Standardized Set**: Material Design icons
-- **Consistent Style**: Outline icons for actions, filled for status
-- **Color Coding**: Status indicators with color semantics
+### Mobile (320px - 768px)
+- Single column layout
+- Collapsed navigation menu
+- Larger touch targets (min 44px)
+- Simplified charts with tap interactions
+- Horizontal scrolling for data tables
 
-## Technical Implementation Considerations
+### Tablet (768px - 1024px)
+- 2-column grid for metrics
+- Expanded navigation
+- Full chart visibility
+- Side-by-side components where appropriate
 
-### Responsive Design Requirements
-- **Mobile First**: Optimized for smartphone use
-- **Tablet Adaptation**: Expanded layout for larger screens
-- **Desktop Support**: Full-featured web interface
-- **Cross-Platform**: iOS and Android native app consistency
+### Desktop (1024px+)
+- 4-column metric grid
+- Full navigation visible
+- Complex data visualizations
+- Hover interactions and tooltips
 
-### Data Integration Architecture
-- **API First**: RESTful APIs for all data operations
-- **Real-time Updates**: WebSocket connections for live data
-- **Offline Support**: Local data caching and synchronization
-- **Third-party Integration**: Utility API connections, smart device protocols
+## Accessibility Features
 
-### Performance Optimization
-- **Lazy Loading**: On-demand data loading for efficiency
-- **Image Optimization**: Compressed assets and responsive images
-- **Code Splitting**: Modular JavaScript bundles
-- **Caching Strategy**: Aggressive caching for static resources
+### Screen Reader Support
+- Proper ARIA labels for all interactive elements
+- Descriptive alt text for charts and images
+- Keyboard navigation support
+- Focus indicators for all interactive elements
 
-## User Experience Flow
+### Color Contrast
+- Minimum AA compliance (4.5:1 ratio)
+- High contrast mode support
+- Color-blind friendly palette
+- Text size adjustment support
 
-### Onboarding Journey
-1. **Account Creation**: Simplified signup with progressive profiling
-2. **Device Setup**: Guided connection of energy monitoring equipment
-3. **Utility Linking**: Secure connection to energy provider accounts
-4. **Goal Setting**: Initial savings targets and preference configuration
-5. **First Insights**: Immediate value demonstration through initial data analysis
+### Keyboard Navigation
+- Tab index management
+- Focus trapping for modals
+- Escape key support for closing elements
+- Arrow key navigation for charts and lists
 
-### Daily Usage Flow
-1. **Dashboard Check**: Quick overview of current consumption and costs
-2. **Drill-down Analysis**: Detailed investigation of usage patterns
-3. **Action Taking**: Implementing savings recommendations
-4. **Progress Tracking**: Monitoring savings and efficiency improvements
+## Performance Considerations
 
-## Security & Privacy Considerations
+### Code Splitting
+```jsx
+// Dynamic imports for heavy components
+const HeavyChart = dynamic(() => import('./HeavyChart'), {
+  loading: () => <Skeleton />,
+  ssr: false
+});
+```
 
-### Data Protection
-- **End-to-end Encryption**: All sensitive data transmission
-- **Secure Storage**: Encrypted local data storage
-- **Access Controls**: Role-based permissions and authentication
-- **Audit Logging**: Comprehensive activity tracking
+### Image Optimization
+```jsx
+// Next.js Image component for optimized loading
+<Image
+  src="/chart-placeholder.png"
+  alt="Energy consumption chart"
+  width={600}
+  height={400}
+  priority={false}
+/>
+```
 
-### Privacy Compliance
-- **GDPR Compliance**: EU data protection standards
-- **Data Minimization**: Only collect essential information
-- **User Consent**: Explicit permission for data usage
-- **Transparency**: Clear privacy policy and data practices
-
-## Success Metrics & Validation
-
-### Key Performance Indicators
-- **User Engagement**: Daily active users, session duration
-- **Feature Adoption**: Percentage using advanced features
-- **Savings Realized**: Actual cost reduction for users
-- **Retention Rates**: User continuation over time
-- **Satisfaction Scores**: User feedback and ratings
-
-### Usability Testing
-- **Task Completion Rates**: Success in common user journeys
-- **Error Rates**: Interface mistakes and confusion
-- **Load Times**: Performance across devices and networks
-- **Accessibility**: Compliance with WCAG guidelines
+### Data Fetching Strategy
+- Client-side fetching for real-time data
+- Server-side rendering for initial load
+- SWR for caching and revalidation
+- Debounced search and filter operations
 
 ## Implementation Roadmap
 
-### Phase 1: Core Foundation (MVP)
-- Basic authentication and user management
-- Simple dashboard with real-time consumption
-- Device connection and basic monitoring
-- Essential notifications and alerts
+### Phase 1: Core Dashboard (MVP)
+- [ ] Global header with navigation
+- [ ] Metric cards overview
+- [ ] Basic energy consumption chart
+- [ ] Device usage breakdown
+- [ ] Simple recommendations
 
-### Phase 2: Advanced Analytics
-- Detailed consumption analytics
-- Cost tracking and savings calculations
-- Comparative usage insights
-- Automated recommendations
+### Phase 2: Enhanced Features
+- [ ] Advanced chart interactions
+- [ ] Historical data comparison
+- [ ] Customizable dashboard
+- [ ] Export functionality
+- [ ] Notifications system
 
-### Phase 3: Ecosystem Integration
-- Utility provider API integration
-- Smart home device compatibility
-- Energy market data integration
-- Advanced automation features
+### Phase 3: Advanced Analytics
+- [ ] AI-powered recommendations
+- [ ] Predictive analytics
+- [ ] Integration with smart devices
+- [ ] Energy tariff optimization
+- [ ] Carbon footprint tracking
 
-### Phase 4: Premium Features
-- Advanced predictive analytics
-- Custom reporting and exports
-- Professional monitoring services
-- Energy trading capabilities
+## Quality Assurance Checklist
 
-## Competitive Analysis Insights
+### Design Quality
+- [ ] Consistent spacing and alignment
+- [ ] Proper color contrast ratios
+- [ ] Responsive across all breakpoints
+- [ ] Accessible to screen readers
+- [ ] Performance optimized
 
-### Leading App Features (Based on Emporia Energy, Sense Energy Monitor)
-- **Real-time monitoring** with circuit-level granularity
-- **Cost tracking** with utility rate integration
-- **Device identification** through machine learning
-- **Savings recommendations** based on usage patterns
-- **Multi-user support** for household management
-- **Historical data analysis** with customizable timeframes
+### User Experience
+- [ ] Intuitive navigation
+- [ ] Clear data presentation
+- [ ] Actionable insights
+- [ ] Minimal loading states
+- [ ] Helpful error messages
 
-### Market Gaps Identified
-- **Simplified setup process** for non-technical users
-- **Better visualization** of complex energy data
-- **More actionable insights** rather than just data presentation
-- **Improved cross-platform consistency**
-- **Enhanced privacy controls** and data ownership
+### Technical Quality
+- [ ] TypeScript implementation
+- [ ] Proper error handling
+- [ ] Unit test coverage
+- [ ] Performance benchmarks
+- [ ] Security considerations
 
-## Conclusion
-This design layout provides a comprehensive foundation for developing a competitive home energy app that addresses user needs for authentication, dashboard organization, navigation, and feature-rich energy management. The design incorporates research-based best practices from leading energy apps while identifying opportunities for differentiation through improved usability, advanced analytics, and ecosystem integration.
+## Next Steps
 
-The modular approach allows for phased implementation while maintaining a cohesive user experience across all platform variants. The focus on security, privacy, and performance ensures a trustworthy and reliable application that users can depend on for their energy management needs.
+1. **Create component library** based on this design system
+2. **Implement core dashboard** with sample data
+3. **Connect to real APIs** for live energy data
+4. **User testing** with target audience
+5. **Iterate based on feedback** and analytics
+
+This layout design provides a comprehensive foundation for the home energy apps section, addressing the key user needs identified in market research while maintaining technical excellence and scalability.

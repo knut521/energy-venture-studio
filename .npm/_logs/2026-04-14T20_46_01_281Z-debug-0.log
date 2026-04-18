@@ -1,0 +1,467 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.20.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/.npmrc
+5 silly config load:file:/usr/etc/npmrc
+6 verbose title npm install bcryptjs @types/bcryptjs
+7 verbose argv "install" "bcryptjs" "@types/bcryptjs"
+8 verbose logfile logs-max:10 dir:/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/.npm/_logs/2026-04-14T20_46_01_281Z-
+9 verbose logfile /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/.npm/_logs/2026-04-14T20_46_01_281Z-debug-0.log
+10 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest @types/bcryptjs@^2.4.6
+15 silly packumentCache full:https://registry.npmjs.org/@types%2fbcryptjs cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/@types%2fbcryptjs 251ms (cache hit)
+17 silly packumentCache full:https://registry.npmjs.org/@types%2fbcryptjs set size:28223 disposed:false
+18 silly fetch manifest bcryptjs@^3.0.3
+19 silly packumentCache full:https://registry.npmjs.org/bcryptjs cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/bcryptjs 17ms (cache hit)
+21 silly packumentCache full:https://registry.npmjs.org/bcryptjs set size:80409 disposed:false
+22 silly placeDep ROOT @types/bcryptjs@2.4.6 REPLACE for: energy-venture-studio@0.1.0 want: ^2.4.6
+23 silly placeDep ROOT bcryptjs@3.0.3 REPLACE for: energy-venture-studio@0.1.0 want: ^3.0.3
+24 warn EBADENGINE Unsupported engine {
+24 warn EBADENGINE   package: '@prisma/streams-local@0.1.2',
+24 warn EBADENGINE   required: { bun: '>=1.3.6', node: '>=22.0.0' },
+24 warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+24 warn EBADENGINE }
+25 silly reify moves {}
+26 silly audit bulk request {
+26 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+26 silly audit   '@auth/core': [ '0.34.3', '0.41.2' ],
+26 silly audit   cookie: [ '0.6.0', '0.7.2' ],
+26 silly audit   jose: [ '5.10.0', '6.2.2', '4.15.9' ],
+26 silly audit   preact: [ '10.11.3', '10.24.3' ],
+26 silly audit   'preact-render-to-string': [ '5.2.3', '6.5.11', '5.2.6' ],
+26 silly audit   '@auth/prisma-adapter': [ '2.11.2' ],
+26 silly audit   oauth4webapi: [ '3.8.5', '2.17.0' ],
+26 silly audit   '@babel/runtime': [ '7.29.2' ],
+26 silly audit   '@electric-sql/pglite': [ '0.4.1' ],
+26 silly audit   '@electric-sql/pglite-socket': [ '0.1.1' ],
+26 silly audit   '@electric-sql/pglite-tools': [ '0.3.1' ],
+26 silly audit   '@emnapi/runtime': [ '1.9.2' ],
+26 silly audit   '@hono/node-server': [ '1.19.11' ],
+26 silly audit   '@img/colour': [ '1.1.0' ],
+26 silly audit   '@img/sharp-darwin-arm64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-darwin-x64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-libvips-darwin-arm64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-darwin-x64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linux-arm': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linux-arm64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linux-ppc64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linux-riscv64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linux-s390x': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linux-x64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linuxmusl-arm64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-libvips-linuxmusl-x64': [ '1.2.4' ],
+26 silly audit   '@img/sharp-linux-arm': [ '0.34.5' ],
+26 silly audit   '@img/sharp-linux-arm64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-linux-ppc64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-linux-riscv64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-linux-s390x': [ '0.34.5' ],
+26 silly audit   '@img/sharp-linux-x64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-linuxmusl-arm64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-linuxmusl-x64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-wasm32': [ '0.34.5' ],
+26 silly audit   '@img/sharp-win32-arm64': [ '0.34.5' ],
+26 silly audit   '@img/sharp-win32-ia32': [ '0.34.5' ],
+26 silly audit   '@img/sharp-win32-x64': [ '0.34.5' ],
+26 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+26 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+26 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+26 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+26 silly audit   '@kurkle/color': [ '0.3.4' ],
+26 silly audit   '@next/env': [ '15.5.15' ],
+26 silly audit   '@next/swc-darwin-arm64': [ '15.5.15' ],
+26 silly audit   '@next/swc-darwin-x64': [ '15.5.15' ],
+26 silly audit   '@next/swc-linux-arm64-gnu': [ '15.5.15' ],
+26 silly audit   '@next/swc-linux-arm64-musl': [ '15.5.15' ],
+26 silly audit   '@next/swc-linux-x64-gnu': [ '15.5.15' ],
+26 silly audit   '@next/swc-linux-x64-musl': [ '15.5.15' ],
+26 silly audit   '@next/swc-win32-arm64-msvc': [ '15.5.15' ],
+26 silly audit   '@next/swc-win32-x64-msvc': [ '15.5.15' ],
+26 silly audit   '@nodelib/fs.scandir': [ '2.1.5' ],
+26 silly audit   '@nodelib/fs.stat': [ '2.0.5' ],
+26 silly audit   '@nodelib/fs.walk': [ '1.2.8' ],
+26 silly audit   '@panva/hkdf': [ '1.2.1' ],
+26 silly audit   '@prisma/client': [ '7.7.0' ],
+26 silly audit   '@prisma/client-runtime-utils': [ '7.7.0' ],
+26 silly audit   '@prisma/config': [ '7.7.0' ],
+26 silly audit   '@prisma/debug': [ '7.7.0', '7.2.0' ],
+26 silly audit   '@prisma/dev': [ '0.24.3' ],
+26 silly audit   '@prisma/engines': [ '7.7.0' ],
+26 silly audit   '@prisma/engines-version': [ '7.6.0-1.75cbdc1eb7150937890ad5465d861175c6624711' ],
+26 silly audit   '@prisma/get-platform': [ '7.7.0', '7.2.0' ],
+26 silly audit   '@prisma/fetch-engine': [ '7.7.0' ],
+26 silly audit   '@prisma/query-plan-executor': [ '7.2.0' ],
+26 silly audit   '@prisma/streams-local': [ '0.1.2' ],
+26 silly audit   '@prisma/studio-core': [ '0.27.3' ],
+26 silly audit   '@radix-ui/primitive': [ '1.1.3' ],
+26 silly audit   '@radix-ui/react-compose-refs': [ '1.1.2' ],
+26 silly audit   '@radix-ui/react-primitive': [ '2.1.3' ],
+26 silly audit   '@radix-ui/react-slot': [ '1.2.3' ],
+26 silly audit   '@radix-ui/react-toggle': [ '1.1.10' ],
+26 silly audit   '@radix-ui/react-use-controllable-state': [ '1.2.2' ],
+26 silly audit   '@radix-ui/react-use-effect-event': [ '0.0.2' ],
+26 silly audit   '@radix-ui/react-use-layout-effect': [ '1.1.1' ],
+26 silly audit   '@standard-schema/spec': [ '1.1.0' ],
+26 silly audit   '@swc/helpers': [ '0.5.15' ],
+26 silly audit   '@types/cookie': [ '0.6.0' ],
+26 silly audit   '@types/node': [ '22.19.17' ],
+26 silly audit   '@types/react': [ '19.2.14' ],
+26 silly audit   ajv: [ '8.18.0' ],
+26 silly audit   'any-promise': [ '1.3.0' ],
+26 silly audit   anymatch: [ '3.1.3' ],
+26 silly audit   arg: [ '5.0.2' ],
+26 silly audit   autoprefixer: [ '10.5.0' ],
+26 silly audit   'aws-ssl-profiles': [ '1.1.2' ],
+26 silly audit   'baseline-browser-mapping': [ '2.10.19' ],
+26 silly audit   'better-result': [ '2.8.2' ],
+26 silly audit   'binary-extensions': [ '2.3.0' ],
+26 silly audit   braces: [ '3.0.3' ],
+26 silly audit   browserslist: [ '4.28.2' ],
+26 silly audit   c12: [ '3.1.0' ],
+26 silly audit   chokidar: [ '4.0.3', '3.6.0' ],
+26 silly audit   jiti: [ '2.6.1', '1.21.7' ],
+26 silly audit   readdirp: [ '4.1.2', '3.6.0' ],
+26 silly audit   'camelcase-css': [ '2.0.1' ],
+26 silly audit   'caniuse-lite': [ '1.0.30001788' ],
+26 silly audit   'chart.js': [ '4.5.1' ],
+26 silly audit   'glob-parent': [ '5.1.2', '6.0.2' ],
+26 silly audit   citty: [ '0.1.6', '0.2.2' ],
+26 silly audit   'client-only': [ '0.0.1' ],
+26 silly audit   clsx: [ '2.1.1' ],
+26 silly audit   commander: [ '4.1.1' ],
+26 silly audit   confbox: [ '0.2.4' ],
+26 silly audit   consola: [ '3.4.2' ],
+26 silly audit   'cross-spawn': [ '7.0.6' ],
+26 silly audit   cssesc: [ '3.0.0' ],
+26 silly audit   csstype: [ '3.2.3' ],
+26 silly audit   'deepmerge-ts': [ '7.1.5' ],
+26 silly audit   defu: [ '6.1.7' ],
+26 silly audit   denque: [ '2.1.0' ],
+26 silly audit   destr: [ '2.0.5' ],
+26 silly audit   'detect-libc': [ '2.1.2' ],
+26 silly audit   didyoumean: [ '1.2.2' ],
+26 silly audit   dlv: [ '1.1.3' ],
+26 silly audit   dotenv: [ '16.6.1' ],
+26 silly audit   effect: [ '3.20.0' ],
+26 silly audit   'electron-to-chromium': [ '1.5.336' ],
+26 silly audit   empathic: [ '2.0.0' ],
+26 silly audit   'env-paths': [ '3.0.0' ],
+26 silly audit   'es-errors': [ '1.3.0' ],
+26 silly audit   escalade: [ '3.2.0' ],
+26 silly audit   exsolve: [ '1.0.8' ],
+26 silly audit   'fast-check': [ '3.23.2' ],
+26 silly audit   'fast-deep-equal': [ '3.1.3' ],
+26 silly audit   'fast-glob': [ '3.3.3' ],
+26 silly audit   'fast-uri': [ '3.1.0' ],
+26 silly audit   fastq: [ '1.20.1' ],
+26 silly audit   'fill-range': [ '7.1.1' ],
+26 silly audit   'foreground-child': [ '3.3.1' ],
+26 silly audit   'fraction.js': [ '5.3.4' ],
+26 silly audit   fsevents: [ '2.3.3' ],
+26 silly audit   'function-bind': [ '1.1.2' ],
+26 silly audit   'generate-function': [ '2.3.1' ],
+26 silly audit   'get-port-please': [ '3.2.0' ],
+26 silly audit   giget: [ '2.0.0' ],
+26 silly audit   'graceful-fs': [ '4.2.11' ],
+26 silly audit   grammex: [ '3.1.12' ],
+26 silly audit   graphmatch: [ '1.1.1' ],
+26 silly audit   hasown: [ '2.0.2' ],
+26 silly audit   hono: [ '4.12.12' ],
+26 silly audit   'http-status-codes': [ '2.3.0' ],
+26 silly audit   'iconv-lite': [ '0.7.2' ],
+26 silly audit   'is-binary-path': [ '2.1.0' ],
+26 silly audit   'is-core-module': [ '2.16.1' ],
+26 silly audit   'is-extglob': [ '2.1.1' ],
+26 silly audit   'is-glob': [ '4.0.3' ],
+26 silly audit   'is-number': [ '7.0.0' ],
+26 silly audit   'is-property': [ '1.0.2' ],
+26 silly audit   isexe: [ '2.0.0' ],
+26 silly audit   'json-schema-traverse': [ '1.0.0' ],
+26 silly audit   lilconfig: [ '3.1.3' ],
+26 silly audit   'lines-and-columns': [ '1.2.4' ],
+26 silly audit   long: [ '5.3.2' ],
+26 silly audit   'lru-cache': [ '6.0.0' ],
+26 silly audit   'lru.min': [ '1.1.4' ],
+26 silly audit   'lucide-react': [ '0.468.0' ],
+26 silly audit   merge2: [ '1.4.1' ],
+26 silly audit   micromatch: [ '4.0.8' ],
+26 silly audit   mysql2: [ '3.15.3' ],
+26 silly audit   mz: [ '2.7.0' ],
+26 silly audit   'named-placeholders': [ '1.1.6' ],
+26 silly audit   nanoid: [ '3.3.11' ],
+26 silly audit   next: [ '15.5.15' ],
+26 silly audit   'next-auth': [ '4.24.13' ],
+26 silly audit   postcss: [ '8.4.31', '8.5.9' ],
+26 silly audit   'node-fetch-native': [ '1.6.7' ],
+26 silly audit   'node-releases': [ '2.0.37' ],
+26 silly audit   'normalize-path': [ '3.0.0' ],
+26 silly audit   nypm: [ '0.6.5' ],
+26 silly audit   oauth: [ '0.9.15' ],
+26 silly audit   'object-assign': [ '4.1.1' ],
+26 silly audit   'object-hash': [ '3.0.0', '2.2.0' ],
+26 silly audit   ohash: [ '2.0.11' ],
+26 silly audit   'oidc-token-hash': [ '5.2.0' ],
+26 silly audit   'openid-client': [ '5.7.1' ],
+26 silly audit   'path-key': [ '3.1.1' ],
+26 silly audit   'path-parse': [ '1.0.7' ],
+26 silly audit   pathe: [ '2.0.3' ],
+26 silly audit   'perfect-debounce': [ '1.0.0' ],
+26 silly audit   picocolors: [ '1.1.1' ],
+26 silly audit   picomatch: [ '2.3.2', '4.0.4' ],
+26 silly audit   pify: [ '2.3.0' ],
+26 silly audit   pirates: [ '4.0.7' ],
+26 silly audit   'pkg-types': [ '2.3.0' ],
+26 silly audit   'postcss-import': [ '15.1.0' ],
+26 silly audit   'postcss-js': [ '4.1.0' ],
+26 silly audit   'postcss-load-config': [ '6.0.1' ],
+26 silly audit   'postcss-nested': [ '6.2.0' ],
+26 silly audit   'postcss-selector-parser': [ '6.1.2' ],
+26 silly audit   'postcss-value-parser': [ '4.2.0' ],
+26 silly audit   postgres: [ '3.4.7' ],
+26 silly audit   'pretty-format': [ '3.8.0' ],
+26 silly audit   prisma: [ '7.7.0' ],
+26 silly audit   'proper-lockfile': [ '4.1.2' ],
+26 silly audit   'signal-exit': [ '3.0.7', '4.1.0' ],
+26 silly audit   'pure-rand': [ '6.1.0' ],
+26 silly audit   'queue-microtask': [ '1.2.3' ],
+26 silly audit   rc9: [ '2.1.2' ],
+26 silly audit   react: [ '19.2.5' ],
+26 silly audit   'react-dom': [ '19.2.5' ],
+26 silly audit   'read-cache': [ '1.0.0' ],
+26 silly audit   remeda: [ '2.33.4' ],
+26 silly audit   'require-from-string': [ '2.0.2' ],
+26 silly audit   resolve: [ '1.22.12' ],
+26 silly audit   retry: [ '0.12.0' ],
+26 silly audit   reusify: [ '1.1.0' ],
+26 silly audit   'run-parallel': [ '1.2.0' ],
+26 silly audit   'safer-buffer': [ '2.1.2' ],
+26 silly audit   scheduler: [ '0.27.0' ],
+26 silly audit   semver: [ '7.7.4' ],
+26 silly audit   'seq-queue': [ '0.0.5' ],
+26 silly audit   sharp: [ '0.34.5' ],
+26 silly audit   'shebang-command': [ '2.0.0' ],
+26 silly audit   'shebang-regex': [ '3.0.0' ],
+26 silly audit   'source-map-js': [ '1.2.1' ],
+26 silly audit   sqlstring: [ '2.3.3' ],
+26 silly audit   'std-env': [ '3.10.0' ],
+26 silly audit   'styled-jsx': [ '5.1.6' ],
+26 silly audit   sucrase: [ '3.35.1' ],
+26 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+26 silly audit   tailwindcss: [ '3.4.19' ],
+26 silly audit   thenify: [ '3.3.1' ],
+26 silly audit   'thenify-all': [ '1.6.0' ],
+26 silly audit   tinyexec: [ '1.1.1' ],
+26 silly audit   tinyglobby: [ '0.2.16' ],
+26 silly audit   fdir: [ '6.5.0' ],
+26 silly audit   'to-regex-range': [ '5.0.1' ],
+26 silly audit   'ts-interface-checker': [ '0.1.13' ],
+26 silly audit   tslib: [ '2.8.1' ],
+26 silly audit   typescript: [ '5.9.3' ],
+26 silly audit   'undici-types': [ '6.21.0' ],
+26 silly audit   'update-browserslist-db': [ '1.2.3' ],
+26 silly audit   'util-deprecate': [ '1.0.2' ],
+26 silly audit   uuid: [ '8.3.2' ],
+26 silly audit   valibot: [ '1.2.0' ],
+26 silly audit   which: [ '2.0.2' ],
+26 silly audit   yallist: [ '4.0.0' ],
+26 silly audit   zeptomatch: [ '2.1.0' ],
+26 silly audit   '@types/bcryptjs': [ '2.4.6' ],
+26 silly audit   bcryptjs: [ '3.0.3' ]
+26 silly audit }
+27 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/fsevents
+28 silly reify mark deleted [
+28 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/fsevents'
+28 silly reify ]
+29 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-win32-x64-msvc
+30 silly reify mark deleted [
+30 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-win32-x64-msvc'
+30 silly reify ]
+31 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-win32-arm64-msvc
+32 silly reify mark deleted [
+32 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-win32-arm64-msvc'
+32 silly reify ]
+33 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-linux-arm64-musl
+34 silly reify mark deleted [
+34 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-linux-arm64-musl'
+34 silly reify ]
+35 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-linux-arm64-gnu
+36 silly reify mark deleted [
+36 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-linux-arm64-gnu'
+36 silly reify ]
+37 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-darwin-x64
+38 silly reify mark deleted [
+38 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-darwin-x64'
+38 silly reify ]
+39 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-darwin-arm64
+40 silly reify mark deleted [
+40 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@next/swc-darwin-arm64'
+40 silly reify ]
+41 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-win32-x64
+42 silly reify mark deleted [
+42 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-win32-x64'
+42 silly reify ]
+43 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-win32-ia32
+44 silly reify mark deleted [
+44 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-win32-ia32'
+44 silly reify ]
+45 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-win32-arm64
+46 silly reify mark deleted [
+46 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-win32-arm64'
+46 silly reify ]
+47 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-wasm32
+48 silly reify mark deleted [
+48 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-wasm32'
+48 silly reify ]
+49 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@emnapi/runtime
+50 silly reify mark deleted [
+50 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@emnapi/runtime'
+50 silly reify ]
+51 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linuxmusl-arm64
+52 silly reify mark deleted [
+52 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linuxmusl-arm64'
+52 silly reify ]
+53 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-s390x
+54 silly reify mark deleted [
+54 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-s390x'
+54 silly reify ]
+55 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-riscv64
+56 silly reify mark deleted [
+56 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-riscv64'
+56 silly reify ]
+57 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-ppc64
+58 silly reify mark deleted [
+58 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-ppc64'
+58 silly reify ]
+59 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-arm64
+60 silly reify mark deleted [
+60 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-arm64'
+60 silly reify ]
+61 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-arm
+62 silly reify mark deleted [
+62 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-linux-arm'
+62 silly reify ]
+63 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linuxmusl-arm64
+64 silly reify mark deleted [
+64 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linuxmusl-arm64'
+64 silly reify ]
+65 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-s390x
+66 silly reify mark deleted [
+66 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-s390x'
+66 silly reify ]
+67 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-riscv64
+68 silly reify mark deleted [
+68 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-riscv64'
+68 silly reify ]
+69 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-ppc64
+70 silly reify mark deleted [
+70 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-ppc64'
+70 silly reify ]
+71 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-arm64
+72 silly reify mark deleted [
+72 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-arm64'
+72 silly reify ]
+73 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-arm
+74 silly reify mark deleted [
+74 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-linux-arm'
+74 silly reify ]
+75 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-darwin-x64
+76 silly reify mark deleted [
+76 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-darwin-x64'
+76 silly reify ]
+77 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-darwin-arm64
+78 silly reify mark deleted [
+78 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-libvips-darwin-arm64'
+78 silly reify ]
+79 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-darwin-x64
+80 silly reify mark deleted [
+80 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-darwin-x64'
+80 silly reify ]
+81 verbose reify failed optional dependency /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-darwin-arm64
+82 silly reify mark deleted [
+82 silly reify   '/data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e/node_modules/@img/sharp-darwin-arm64'
+82 silly reify ]
+83 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 641ms
+84 silly audit report {
+84 silly audit report   cookie: [
+84 silly audit report     {
+84 silly audit report       id: 1103907,
+84 silly audit report       url: 'https://github.com/advisories/GHSA-pxg6-pf52-xh8x',
+84 silly audit report       title: 'cookie accepts cookie name, path, and domain with out of bounds characters',
+84 silly audit report       severity: 'low',
+84 silly audit report       vulnerable_versions: '<0.7.0',
+84 silly audit report       cwe: [Array],
+84 silly audit report       cvss: [Object]
+84 silly audit report     }
+84 silly audit report   ],
+84 silly audit report   '@hono/node-server': [
+84 silly audit report     {
+84 silly audit report       id: 1116281,
+84 silly audit report       url: 'https://github.com/advisories/GHSA-92pp-h63x-v22m',
+84 silly audit report       title: '@hono/node-server: Middleware bypass via repeated slashes in serveStatic',
+84 silly audit report       severity: 'moderate',
+84 silly audit report       vulnerable_versions: '<1.19.13',
+84 silly audit report       cwe: [Array],
+84 silly audit report       cvss: [Object]
+84 silly audit report     }
+84 silly audit report   ]
+84 silly audit report }
+85 silly packumentCache corgi:https://registry.npmjs.org/cookie cache-miss
+86 silly packumentCache corgi:https://registry.npmjs.org/@hono%2fnode-server cache-miss
+87 http fetch GET 200 https://registry.npmjs.org/cookie 131ms (cache hit)
+88 silly packumentCache corgi:https://registry.npmjs.org/cookie set size:23677 disposed:false
+89 http fetch GET 200 https://registry.npmjs.org/@hono%2fnode-server 133ms (cache hit)
+90 silly packumentCache corgi:https://registry.npmjs.org/@hono%2fnode-server set size:85395 disposed:false
+91 silly packumentCache corgi:https://registry.npmjs.org/@auth%2fcore cache-miss
+92 http fetch GET 200 https://registry.npmjs.org/@auth%2fcore 15ms (cache hit)
+93 silly packumentCache corgi:https://registry.npmjs.org/@auth%2fcore set size:153120 disposed:false
+94 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fdev cache-miss
+95 http fetch GET 200 https://registry.npmjs.org/@prisma%2fdev 22ms (cache hit)
+96 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fdev set size:959256 disposed:false
+97 silly packumentCache corgi:https://registry.npmjs.org/next-auth cache-miss
+98 http fetch GET 200 https://registry.npmjs.org/next-auth 26ms (cache hit)
+99 silly packumentCache corgi:https://registry.npmjs.org/next-auth set size:1811103 disposed:false
+100 silly packumentCache corgi:https://registry.npmjs.org/prisma cache-miss
+101 http fetch GET 200 https://registry.npmjs.org/prisma 167ms (cache hit)
+102 silly packumentCache corgi:https://registry.npmjs.org/prisma set size:22782867 disposed:false
+103 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fclient cache-miss
+104 http fetch GET 200 https://registry.npmjs.org/@prisma%2fclient 794ms (cache hit)
+105 silly packumentCache corgi:https://registry.npmjs.org/@prisma%2fclient set size:37761997 disposed:false
+106 silly ADD
+107 silly ADD
+108 silly ADD
+109 silly ADD
+110 silly ADD
+111 silly ADD
+112 silly ADD
+113 silly ADD
+114 silly ADD
+115 silly ADD
+116 silly ADD
+117 silly ADD
+118 silly ADD
+119 silly ADD
+120 silly ADD
+121 silly ADD
+122 silly ADD
+123 silly ADD
+124 silly ADD
+125 silly ADD
+126 silly ADD
+127 silly ADD
+128 silly ADD
+129 silly ADD
+130 silly ADD
+131 silly ADD
+132 silly ADD
+133 silly ADD
+134 verbose cwd /data/projects/13f06e1d-690a-4876-96e6-ef7eca9c296e
+135 verbose os Linux 6.6.87.2-microsoft-standard-WSL2
+136 verbose node v20.20.2
+137 verbose npm  v10.8.2
+138 verbose exit 0
+139 info ok
